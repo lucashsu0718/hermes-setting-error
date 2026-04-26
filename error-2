@@ -1,0 +1,116 @@
+PS C:\Users\xulux> irm https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.ps1 | iex
+
+┌─────────────────────────────────────────────────────────┐
+│             ⚕ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+→ Checking for uv package manager...
+✓ uv found (uv 0.11.7 (9d177269e 2026-04-15 x86_64-pc-windows-msvc))
+→ Checking Python 3.11...
+→ Python 3.11 not found, installing via uv...
+⚠ uv python install error: Downloading cpython-3.11.15-windows-x86_64-none (download) (24.4MiB)
+→ Trying to find any existing Python 3.10+...
+✓ Found fallback: Python 3.10.11
+→ Checking Git...
+✓ Git found (git version 2.53.0.windows.1)
+→ Checking Node.js (for browser tools)...
+✓ Node.js v24.13.1 found
+True
+→ Checking ripgrep (fast file search)...
+✓ ripgrep 15.1.0 (rev af60c2de9d) found
+→ Checking ffmpeg (TTS voice messages)...
+✓ ffmpeg found
+→ Installing to C:\Users\xulux\AppData\Local\hermes\hermes-agent...
+→ Existing installation found, updating...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (10/10), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 10 (delta 5), reused 7 (delta 5), pack-reused 0 (from 0)
+Unpacking objects: 100% (10/10), 10.19 KiB | 417.00 KiB/s, done.
+From https://github.com/NousResearch/hermes-agent
+   cf2fabc4..d635e2df  main       -> origin/main
+ + c5211ce7...a4e804c0 fix/flush-memories-context-overflow -> origin/fix/flush-memories-context-overflow  (forced update)
+Already on 'main'
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+From https://github.com/NousResearch/hermes-agent
+ * branch              main       -> FETCH_HEAD
+Updating cf2fabc4..d635e2df
+Fast-forward
+ run_agent.py                                    | 1 +
+ tests/run_agent/test_compression_feasibility.py | 3 +++
+ 2 files changed, 4 insertions(+)
+→ Initializing submodules...
+✓ Submodules ready
+✓ Repository ready
+→ Creating virtual environment with Python 3.10...
+→ Virtual environment already exists, recreating...
+Using CPython 3.10.11 interpreter at: C:\Users\xulux\AppData\Local\Programs\Python\Python310\python.exe
+warning: The requested interpreter resolved to Python 3.10.11, which is incompatible with the project's Python requirement: `>=3.11` (from `project.requires-python`)
+Creating virtual environment at: venv
+Activate with: venv\Scripts\activate
+✓ Virtual environment ready (Python 3.10)
+→ Installing dependencies...
+Using Python 3.10.11 environment at: venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because the current Python version (3.10.11) does not satisfy Python>=3.11 and hermes-agent==0.11.0 depends on
+      Python>=3.11, we can conclude that hermes-agent==0.11.0 cannot be used.
+      And because only hermes-agent==0.11.0 is available and you require hermes-agent, we can conclude that your
+      requirements are unsatisfiable.
+✓ Main package installed
+→ Installing tinker-atropos (RL training backend)...
+⚠ tinker-atropos install failed (RL tools may not work)
+✓ All dependencies installed
+→ Installing Node.js dependencies (browser tools)...
+✓ Node.js dependencies installed
+→ Installing TUI dependencies...
+✓ TUI dependencies installed
+→ Setting up hermes command...
+→ PATH already configured
+✓ hermes command ready
+→ Setting up configuration files...
+→ ~/.hermes/.env already exists, keeping it
+→ ~/.hermes/config.yaml already exists, keeping it
+✓ Configuration directory ready: ~/.hermes/
+→ Syncing bundled skills to ~/.hermes/skills/ ...
+
+→ Starting setup wizard...
+
+Traceback (most recent call last):
+  File "C:\Users\xulux\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\xulux\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\xulux\AppData\Local\hermes\hermes-agent\hermes_cli\main.py", line 164, in <module>
+    from hermes_cli.config import get_hermes_home
+  File "C:\Users\xulux\AppData\Local\hermes\hermes-agent\hermes_cli\config.py", line 62, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+
+┌─────────────────────────────────────────────────────────┐
+│              ✓ Installation Complete!                   │
+└─────────────────────────────────────────────────────────┘
+
+📁 Your files:
+
+   Config:    C:\Users\xulux\AppData\Local\hermes\config.yaml
+   API Keys:  C:\Users\xulux\AppData\Local\hermes\.env
+   Data:      C:\Users\xulux\AppData\Local\hermes\cron\, sessions\, logs\
+   Code:      C:\Users\xulux\AppData\Local\hermes\hermes-agent\
+
+─────────────────────────────────────────────────────────
+
+🚀 Commands:
+
+   hermes              Start chatting
+   hermes setup        Configure API keys & settings
+   hermes config       View/edit configuration
+   hermes config edit  Open config in editor
+   hermes gateway      Start messaging gateway (Telegram, Discord, etc.)
+   hermes update       Update to latest version
+
+─────────────────────────────────────────────────────────
+
+⚡ Restart your terminal for PATH changes to take effect
