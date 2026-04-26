@@ -15,16 +15,28 @@ My Python version is **3.10**, but the project requires **Python 3.11 or higher*
 ### Solution
 Upgrade Python to version 3.11 or above.
 
-Download:
+Download :
 
 ![Python 3.11 download](Python-3.11-download.png)
 
 ---
 
-## [Error-2](error-2) : Path mistake
+## [Error-2](error-2) : still mistake
 
 ### Problem
 After change my Python version, still mistake.
+
+---
+
+### Solution
+I think is my instal error.
+
+---
+
+## [Error-3](error-3) : still mistake
+
+### Problem
+After instal, still error. So is path mistake.
 
 ---
 
