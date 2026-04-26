@@ -59,4 +59,6 @@ setting venv:
     PS C:\Users\xulux\AppData\Local\hermes\hermes-agent> py -3.14 -m venv venv
     PS C:\Users\xulux\AppData\Local\hermes\hermes-agent> venv\Scripts\activate
 
+[Pip-install](pip-install)
 
+[Hermes download success](hermes-download-success)
