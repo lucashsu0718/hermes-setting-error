@@ -17,4 +17,4 @@ Upgrade Python to version 3.11 or above.
 
 Download:
 
-          ![Python 3.11 download](Python-3.11-download.png)
+![Python 3.11 download](Python-3.11-download.png)
