@@ -16,4 +16,4 @@ My Python version is **3.10**, but the project requires **Python 3.11 or higher*
 Upgrade Python to version 3.11 or above.
 
 Download:
-![Python 3.11 download](python-3.11-download.png)
+![Python 3.11 download](Python-3.11-download.png)
