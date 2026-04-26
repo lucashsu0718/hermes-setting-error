@@ -1,0 +1,127 @@
+PS C:\Users\xulux> irm https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.ps1 | iex
+
+┌─────────────────────────────────────────────────────────┐
+│             ⚕ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+→ Checking for uv package manager...
+→ Installing uv (fast Python package manager)...
+✓ uv installed (uv 0.11.7 (9d177269e 2026-04-15 x86_64-pc-windows-msvc))
+→ Checking Python 3.11...
+→ Python 3.11 not found, installing via uv...
+⚠ uv python install error: Downloading cpython-3.11.15-windows-x86_64-none (download) (24.4MiB)
+→ Trying to find any existing Python 3.10+...
+✓ Found fallback: Python 3.10.11
+→ Checking Git...
+✓ Git found (git version 2.53.0.windows.1)
+→ Checking Node.js (for browser tools)...
+✓ Node.js v24.13.1 found
+True
+→ Checking ripgrep (fast file search)...
+→ Checking ffmpeg (TTS voice messages)...
+→ Installing ripgrep for faster file search and ffmpeg for TTS voice messages via winget...
+✓ ripgrep installed
+✓ ffmpeg installed
+→ Installing to C:\Users\xulux\AppData\Local\hermes\hermes-agent...
+→ Configuring git for Windows compatibility...
+→ Trying SSH clone...
+Cloning into 'C:\Users\xulux\AppData\Local\hermes\hermes-agent'...
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+→ SSH failed, trying HTTPS...
+Cloning into 'C:\Users\xulux\AppData\Local\hermes\hermes-agent'...
+remote: Enumerating objects: 55326, done.
+remote: Counting objects: 100% (341/341), done.
+remote: Compressing objects: 100% (180/180), done.
+remote: Total 55326 (delta 241), reused 162 (delta 161), pack-reused 54985 (from 2)
+Receiving objects: 100% (55326/55326), 142.16 MiB | 2.90 MiB/s, done.
+Resolving deltas: 100% (39460/39460), done.
+Updating files: 100% (2534/2534), done.
+Submodule 'tinker-atropos' (https://github.com/nousresearch/tinker-atropos) registered for path 'tinker-atropos'
+Cloning into 'C:/Users/xulux/AppData/Local/hermes/hermes-agent/tinker-atropos'...
+remote: Enumerating objects: 534, done.
+remote: Counting objects: 100% (331/331), done.
+remote: Compressing objects: 100% (222/222), done.
+remote: Total 534 (delta 185), reused 183 (delta 107), pack-reused 203 (from 1)
+Receiving objects: 100% (534/534), 176.92 KiB | 616.00 KiB/s, done.
+Resolving deltas: 100% (294/294), done.
+Submodule path 'tinker-atropos': checked out '65f084ee8054a5d02aeac76e24ed60388511c82b'
+→ Initializing submodules...
+✓ Submodules ready
+✓ Repository ready
+→ Creating virtual environment with Python 3.10...
+Using CPython 3.10.11 interpreter at: C:\Users\xulux\AppData\Local\Programs\Python\Python310\python.exe
+warning: The requested interpreter resolved to Python 3.10.11, which is incompatible with the project's Python requirement: `>=3.11` (from `project.requires-python`)
+Creating virtual environment at: venv
+Activate with: venv\Scripts\activate
+✓ Virtual environment ready (Python 3.10)
+→ Installing dependencies...
+Using Python 3.10.11 environment at: venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because the current Python version (3.10.11) does not satisfy Python>=3.11 and hermes-agent==0.11.0 depends on
+      Python>=3.11, we can conclude that hermes-agent==0.11.0 cannot be used.
+      And because only hermes-agent==0.11.0 is available and you require hermes-agent, we can conclude that your
+      requirements are unsatisfiable.
+✓ Main package installed
+→ Installing tinker-atropos (RL training backend)...
+⚠ tinker-atropos install failed (RL tools may not work)
+✓ All dependencies installed
+→ Installing Node.js dependencies (browser tools)...
+✓ Node.js dependencies installed
+→ Installing TUI dependencies...
+✓ TUI dependencies installed
+→ Setting up hermes command...
+✓ Added to user PATH: C:\Users\xulux\AppData\Local\hermes\hermes-agent\venv\Scripts
+✓ Set HERMES_HOME=C:\Users\xulux\AppData\Local\hermes
+✓ hermes command ready
+→ Setting up configuration files...
+✓ Created ~/.hermes/.env from template
+✓ Created ~/.hermes/config.yaml from template
+✓ Created ~/.hermes/SOUL.md (edit to customize personality)
+✓ Configuration directory ready: ~/.hermes/
+→ Syncing bundled skills to ~/.hermes/skills/ ...
+✓ Skills copied to ~/.hermes/skills/
+
+→ Starting setup wizard...
+
+Traceback (most recent call last):
+  File "C:\Users\xulux\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\xulux\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\xulux\AppData\Local\hermes\hermes-agent\hermes_cli\main.py", line 164, in <module>
+    from hermes_cli.config import get_hermes_home
+  File "C:\Users\xulux\AppData\Local\hermes\hermes-agent\hermes_cli\config.py", line 62, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+
+┌─────────────────────────────────────────────────────────┐
+│              ✓ Installation Complete!                   │
+└─────────────────────────────────────────────────────────┘
+
+📁 Your files:
+
+   Config:    C:\Users\xulux\AppData\Local\hermes\config.yaml
+   API Keys:  C:\Users\xulux\AppData\Local\hermes\.env
+   Data:      C:\Users\xulux\AppData\Local\hermes\cron\, sessions\, logs\
+   Code:      C:\Users\xulux\AppData\Local\hermes\hermes-agent\
+
+─────────────────────────────────────────────────────────
+
+🚀 Commands:
+
+   hermes              Start chatting
+   hermes setup        Configure API keys & settings
+   hermes config       View/edit configuration
+   hermes config edit  Open config in editor
+   hermes gateway      Start messaging gateway (Telegram, Discord, etc.)
+   hermes update       Update to latest version
+
+─────────────────────────────────────────────────────────
+
+⚡ Restart your terminal for PATH changes to take effect
