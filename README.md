@@ -1,7 +1,19 @@
 # Hermes-setting-error
 
-it is my 11th grader student portfolio
+## Introduction
+This is my 11th grade student portfolio.
 
-[error-1](error-1) python version mistake (my python version : 3.10 need minimum version : 3.11) :
+---
 
-  ![python 3.11 download](./python 3.11 download.png)
+## Error 1: Python version mistake
+
+### Problem
+My Python version is **3.10**, but the project requires **Python 3.11 or higher**.
+
+---
+
+### Solution
+Upgrade Python to version 3.11 or above.
+
+Download:
+![Python 3.11 download](./python-3.11-download.png)
