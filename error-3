@@ -1,0 +1,261 @@
+PS C:\Users\xulux> irm https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.ps1 | iex
+
+┌─────────────────────────────────────────────────────────┐
+│             ⚕ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+→ Checking for uv package manager...
+✓ uv found (uv 0.11.7 (9d177269e 2026-04-15 x86_64-pc-windows-msvc))
+→ Checking Python 3.11...
+→ Python 3.11 not found, installing via uv...
+⚠ uv python install error: Downloading cpython-3.11.15-windows-x86_64-none (download) (24.4MiB)
+→ Trying to find any existing Python 3.10+...
+✓ Found fallback: Python 3.10.11
+→ Checking Git...
+✓ Git found (git version 2.53.0.windows.1)
+→ Checking Node.js (for browser tools)...
+✓ Node.js v24.13.1 found
+True
+→ Checking ripgrep (fast file search)...
+✓ ripgrep 15.1.0 (rev af60c2de9d) found
+→ Checking ffmpeg (TTS voice messages)...
+✓ ffmpeg found
+→ Installing to C:\Users\xulux\AppData\Local\hermes\hermes-agent...
+→ Existing installation found, updating...
+remote: Enumerating objects: 1127, done.
+remote: Counting objects: 100% (652/652), done.
+remote: Compressing objects: 100% (208/208), done.
+remote: Total 1127 (delta 497), reused 453 (delta 442), pack-reused 475 (from 3)
+Receiving objects: 100% (1127/1127), 1.97 MiB | 8.83 MiB/s, done.
+Resolving deltas: 100% (679/679), completed with 122 local objects.
+From https://github.com/NousResearch/hermes-agent
+   d635e2df..59b56d44  main                   -> origin/main
+ * [new branch]        bb/base-gui            -> origin/bb/base-gui
+ * [new branch]        bb/tui-long-session-perf -> origin/bb/tui-long-session-perf
+ * [new branch]        bb/tui-perf-fix        -> origin/bb/tui-perf-fix
+ * [new branch]        feature/tui-showroom   -> origin/feature/tui-showroom
+ + a4e804c0...25d9fc80 fix/flush-memories-context-overflow -> origin/fix/flush-memories-context-overflow  (forced update)
+ * [new branch]        fix/nix-package-lock   -> origin/fix/nix-package-lock
+ * [new branch]        hermes/hermes-b46582c0 -> origin/hermes/hermes-b46582c0
+ * [new branch]        investigate/fix-tui-container-ink-bundle -> origin/investigate/fix-tui-container-ink-bundle
+ * [new branch]        sid/nix-overlay        -> origin/sid/nix-overlay
+Already on 'main'
+Your branch is behind 'origin/main' by 82 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+From https://github.com/NousResearch/hermes-agent
+ * branch              main       -> FETCH_HEAD
+Updating d635e2df..59b56d44
+Fast-forward
+ agent/anthropic_adapter.py                         |  17 +-
+ agent/auxiliary_client.py                          |  39 +-
+ agent/codex_responses_adapter.py                   | 158 ++++++-
+ agent/model_metadata.py                            |  26 +-
+ agent/transports/__init__.py                       |   9 +-
+ agent/transports/chat_completions.py               |   9 +-
+ agent/transports/codex.py                          |  20 +
+ agent/transports/types.py                          |   7 +-
+ cli.py                                             |  62 +--
+ gateway/platforms/api_server.py                    |  49 ++
+ gateway/run.py                                     | 420 ++++++++---------
+ gateway/session.py                                 |  16 +-
+ hermes_cli/auth.py                                 |   8 +
+ hermes_cli/azure_detect.py                         | 300 ++++++++++++
+ hermes_cli/commands.py                             |   3 +-
+ hermes_cli/config.py                               |  88 +++-
+ hermes_cli/doctor.py                               |   6 +-
+ hermes_cli/hooks.py                                |   1 +
+ hermes_cli/main.py                                 | 502 +++++++++++++++++++-
+ hermes_cli/model_switch.py                         |  51 ++-
+ hermes_cli/models.py                               | 169 ++++---
+ hermes_cli/oneshot.py                              | 202 ++++++++
+ hermes_cli/providers.py                            |   6 +
+ hermes_cli/runtime_provider.py                     | 155 ++++++-
+ hermes_cli/setup.py                                |  76 ++-
+ hermes_state.py                                    |  34 +-
+ model_tools.py                                     |  12 +
+ plugins/memory/openviking/__init__.py              |   2 +-
+ run_agent.py                                       | 508 ++++++++-------------
+ scripts/release.py                                 |   9 +
+ skills/mlops/inference/obliteratus/SKILL.md        |   7 +
+ .../agent/test_auxiliary_named_custom_providers.py |   6 +-
+ tests/agent/test_model_metadata.py                 |  16 +-
+ tests/agent/test_unsupported_temperature_retry.py  |   8 +-
+ tests/agent/transports/test_chat_completions.py    |   3 +
+ tests/agent/transports/test_codex_transport.py     |  30 ++
+ tests/agent/transports/test_transport.py           |   7 +
+ tests/agent/transports/test_types.py               |  12 +
+ tests/cli/test_cli_new_session.py                  |   2 -
+ tests/e2e/conftest.py                              |   1 +
+ tests/gateway/test_api_server_runs.py              | 365 +++++++++++++++
+ tests/gateway/test_async_memory_flush.py           | 249 ----------
+ tests/gateway/test_flush_memory_stale_guard.py     | 240 ----------
+ tests/gateway/test_reasoning_command.py            | 134 +++++-
+ tests/gateway/test_resume_command.py               |  30 +-
+ tests/gateway/test_session_boundary_hooks.py       |  20 +-
+ .../test_session_boundary_security_state.py        |   3 +-
+ tests/gateway/test_session_info.py                 |   2 +-
+ .../gateway/test_session_model_override_routing.py |   5 +
+ tests/gateway/test_session_model_reset.py          |  15 +-
+ tests/hermes_cli/test_azure_detect.py              | 237 ++++++++++
+ .../test_custom_provider_context_length.py         | 240 ++++++++++
+ .../test_custom_provider_model_switch.py           | 151 +++++-
+ tests/hermes_cli/test_doctor.py                    |  37 ++
+ .../test_model_switch_context_display.py           |  58 +++
+ tests/hermes_cli/test_models.py                    |  11 +
+ .../hermes_cli/test_runtime_provider_resolution.py |  78 ++++
+ tests/hermes_cli/test_setup_noninteractive.py      |  85 ----
+ tests/hermes_cli/test_setup_reconfigure.py         | 287 ++++++++++++
+ tests/hermes_cli/test_suppress_eio_on_interrupt.py | 115 +++++
+ tests/hermes_cli/test_tui_npm_install.py           |  28 ++
+ tests/hermes_cli/test_tui_resume_flow.py           |  64 ++-
+ .../test_compress_focus_plugin_fallback.py         |   1 -
+ tests/run_agent/test_compression_feasibility.py    |  95 +---
+ .../test_deepseek_reasoning_content_echo.py        |   6 +-
+ tests/run_agent/test_flush_memories_codex.py       | 398 ----------------
+ tests/run_agent/test_provider_parity.py            | 204 ++++++++-
+ tests/run_agent/test_run_agent.py                  |  97 ++--
+ tests/run_agent/test_run_agent_codex_responses.py  | 117 +++++
+ tests/run_agent/test_stream_interrupt_retry.py     | 162 +++++++
+ tests/test_hermes_state.py                         |  33 +-
+ tests/test_model_tools.py                          |  31 +-
+ tests/test_tui_gateway_server.py                   | 153 +++++++
+ tests/tools/test_cron_approval_mode.py             |   6 +-
+ tests/tools/test_hardline_blocklist.py             | 290 ++++++++++++
+ tests/tools/test_yolo_mode.py                      |  30 +-
+ tests/tui_gateway/test_protocol.py                 |  31 ++
+ tools/approval.py                                  | 114 +++++
+ tui_gateway/server.py                              |  75 ++-
+ ui-tui/README.md                                   |   4 +-
+ .../src/ink/components/AlternateScreen.tsx         |   6 +-
+ ui-tui/packages/hermes-ink/src/ink/dom.ts          |  15 +-
+ ui-tui/packages/hermes-ink/src/ink/screen.ts       |  39 ++
+ .../packages/hermes-ink/src/ink/selection.test.ts  |  82 ++++
+ ui-tui/packages/hermes-ink/src/ink/selection.ts    |  71 ++-
+ .../packages/hermes-ink/src/ink/termio/osc.test.ts |  21 +-
+ .../__tests__/createGatewayEventHandler.test.ts    |   5 +-
+ ui-tui/src/__tests__/createSlashHandler.test.ts    |  72 ++-
+ ui-tui/src/__tests__/details.test.ts               |   2 +-
+ ui-tui/src/__tests__/platform.test.ts              |  22 +
+ ui-tui/src/app.tsx                                 |   2 +-
+ ui-tui/src/app/interfaces.ts                       |   2 +-
+ ui-tui/src/app/slash/commands/core.ts              |  47 +-
+ ui-tui/src/app/slash/commands/session.ts           |   1 +
+ ui-tui/src/app/slash/commands/setup.ts             |  12 -
+ ui-tui/src/app/turnController.ts                   |   1 +
+ ui-tui/src/app/uiStore.ts                          |   2 +-
+ ui-tui/src/app/useComposerState.ts                 |  39 +-
+ ui-tui/src/app/useInputHandlers.ts                 |  35 +-
+ ui-tui/src/app/useMainApp.ts                       |  16 +-
+ ui-tui/src/components/appChrome.tsx                |   6 +-
+ ui-tui/src/components/appOverlays.tsx              |   9 +-
+ ui-tui/src/components/messageLine.tsx              |   5 +-
+ ui-tui/src/components/modelPicker.tsx              |  68 ++-
+ ui-tui/src/components/overlayControls.tsx          |  50 ++
+ ui-tui/src/components/sessionPicker.tsx            |  24 +-
+ ui-tui/src/components/skillsHub.tsx                |  87 ++--
+ ui-tui/src/components/thinking.tsx                 |  17 +-
+ ui-tui/src/content/hotkeys.ts                      |  23 +-
+ ui-tui/src/gatewayTypes.ts                         |   4 +
+ ui-tui/src/lib/editor.test.ts                      |  74 +++
+ ui-tui/src/lib/editor.ts                           |  47 ++
+ ui-tui/src/lib/platform.ts                         |  20 +-
+ website/docs/developer-guide/session-storage.md    |  11 +-
+ website/docs/guides/azure-foundry.md               | 155 +++++++
+ website/docs/guides/build-a-hermes-plugin.md       |   2 +-
+ website/docs/reference/cli-commands.md             |  12 +-
+ website/docs/reference/environment-variables.md    |   3 +
+ website/docs/user-guide/configuration.md           |  22 +-
+ .../docs/user-guide/features/fallback-providers.md |   6 -
+ website/docs/user-guide/features/hooks.md          |  12 +-
+ website/docs/user-guide/messaging/webhooks.md      |  12 +
+ website/sidebars.ts                                |   1 +
+ 123 files changed, 6307 insertions(+), 2212 deletions(-)
+ create mode 100644 hermes_cli/azure_detect.py
+ create mode 100644 hermes_cli/oneshot.py
+ create mode 100644 tests/gateway/test_api_server_runs.py
+ delete mode 100644 tests/gateway/test_async_memory_flush.py
+ delete mode 100644 tests/gateway/test_flush_memory_stale_guard.py
+ create mode 100644 tests/hermes_cli/test_azure_detect.py
+ create mode 100644 tests/hermes_cli/test_custom_provider_context_length.py
+ create mode 100644 tests/hermes_cli/test_setup_reconfigure.py
+ create mode 100644 tests/hermes_cli/test_suppress_eio_on_interrupt.py
+ delete mode 100644 tests/run_agent/test_flush_memories_codex.py
+ create mode 100644 tests/run_agent/test_stream_interrupt_retry.py
+ create mode 100644 tests/tools/test_hardline_blocklist.py
+ create mode 100644 ui-tui/packages/hermes-ink/src/ink/selection.test.ts
+ create mode 100644 ui-tui/src/components/overlayControls.tsx
+ create mode 100644 ui-tui/src/lib/editor.test.ts
+ create mode 100644 ui-tui/src/lib/editor.ts
+ create mode 100644 website/docs/guides/azure-foundry.md
+→ Initializing submodules...
+✓ Submodules ready
+✓ Repository ready
+→ Creating virtual environment with Python 3.10...
+→ Virtual environment already exists, recreating...
+Using CPython 3.10.11 interpreter at: C:\Users\xulux\AppData\Local\Programs\Python\Python310\python.exe
+warning: The requested interpreter resolved to Python 3.10.11, which is incompatible with the project's Python requirement: `>=3.11` (from `project.requires-python`)
+Creating virtual environment at: venv
+Activate with: venv\Scripts\activate
+✓ Virtual environment ready (Python 3.10)
+→ Installing dependencies...
+Using Python 3.10.11 environment at: venv
+  × No solution found when resolving dependencies:
+  ╰─▶ Because the current Python version (3.10.11) does not satisfy Python>=3.11 and hermes-agent==0.11.0 depends on Python>=3.11, we can conclude that hermes-agent==0.11.0 cannot be used.
+      And because only hermes-agent==0.11.0 is available and you require hermes-agent, we can conclude that your requirements are unsatisfiable.
+✓ Main package installed
+→ Installing tinker-atropos (RL training backend)...
+⚠ tinker-atropos install failed (RL tools may not work)
+✓ All dependencies installed
+→ Installing Node.js dependencies (browser tools)...
+✓ Node.js dependencies installed
+→ Installing TUI dependencies...
+✓ TUI dependencies installed
+→ Setting up hermes command...
+→ PATH already configured
+✓ hermes command ready
+→ Setting up configuration files...
+→ ~/.hermes/.env already exists, keeping it
+→ ~/.hermes/config.yaml already exists, keeping it
+✓ Configuration directory ready: ~/.hermes/
+→ Syncing bundled skills to ~/.hermes/skills/ ...
+
+→ Starting setup wizard...
+
+Traceback (most recent call last):
+  File "C:\Users\xulux\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\xulux\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\xulux\AppData\Local\hermes\hermes-agent\hermes_cli\main.py", line 164, in <module>
+    from hermes_cli.config import get_hermes_home
+  File "C:\Users\xulux\AppData\Local\hermes\hermes-agent\hermes_cli\config.py", line 62, in <module>
+    import yaml
+ModuleNotFoundError: No module named 'yaml'
+
+┌─────────────────────────────────────────────────────────┐
+│              ✓ Installation Complete!                   │
+└─────────────────────────────────────────────────────────┘
+
+📁 Your files:
+
+   Config:    C:\Users\xulux\AppData\Local\hermes\config.yaml
+   API Keys:  C:\Users\xulux\AppData\Local\hermes\.env
+   Data:      C:\Users\xulux\AppData\Local\hermes\cron\, sessions\, logs\
+   Code:      C:\Users\xulux\AppData\Local\hermes\hermes-agent\
+
+─────────────────────────────────────────────────────────
+
+🚀 Commands:
+
+   hermes              Start chatting
+   hermes setup        Configure API keys & settings
+   hermes config       View/edit configuration
+   hermes config edit  Open config in editor
+   hermes gateway      Start messaging gateway (Telegram, Discord, etc.)
+   hermes update       Update to latest version
+
+─────────────────────────────────────────────────────────
+
+⚡ Restart your terminal for PATH changes to take effect
