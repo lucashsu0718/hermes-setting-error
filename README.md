@@ -24,12 +24,12 @@ Download :
 ## [Error-2](error-2) : still mistake
 
 ### Problem
-After change my Python version, still mistake.
+After upgrading Python, the error still persisted due to incorrect system PATH settings.
 
 ---
 
 ### Solution
-Add new Path.
+Added the correct Python path to the system environment variables.
 
 ![path-error-1](path-error-1.png)
 
@@ -38,10 +38,10 @@ Add new Path.
 
 ---
 
-## [Error-3](error-3) : still mistake
+## [Error-3](error-3) : Environment Setup Mistake
 
 ### Problem
-After path change, still error. So is setting mistake.
+Even after fixing the PATH, the issue remained due to incorrect Python environment usage.
 
 ---
  
