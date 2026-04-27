@@ -1,0 +1,44 @@
+📁 All your files are in ~/AppData\Local\hermes/:
+
+   Settings:  C:\Users\xulux\AppData\Local\hermes\config.yaml
+   API Keys:  C:\Users\xulux\AppData\Local\hermes\.env
+   Data:      C:\Users\xulux\AppData\Local\hermes/cron/, sessions/, logs/
+
+────────────────────────────────────────────────────────────
+
+📝 To edit your configuration:
+
+   hermes setup          Re-run the full wizard
+   hermes setup model    Change model/provider
+   hermes setup terminal Change terminal backend
+   hermes setup gateway  Configure messaging
+   hermes setup tools    Configure tool providers
+
+   hermes config         View current settings
+   hermes config edit    Open config in your editor
+   hermes config set <key> <value>
+                          Set a specific value
+
+   Or edit the files directly:
+   nano C:\Users\xulux\AppData\Local\hermes\config.yaml
+   nano C:\Users\xulux\AppData\Local\hermes\.env
+
+────────────────────────────────────────────────────────────
+
+🚀 Ready to go!
+
+   hermes              Start chatting
+   hermes gateway      Start messaging gateway
+   hermes doctor       Check for issues
+
+
+Launch hermes chat now? [Y/n]: y
+
+→ Messaging platform token detected!
+→ The gateway handles messaging platforms and cron job execution.
+
+Would you like to start the gateway now? [Y/n]:
+ ⚕ claude-opus-4.6 │ ctx -- │ [░░░░░░░░░░] -- │ 1.0d │ ⏲ 0s
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
