@@ -63,3 +63,9 @@ setting venv:
 ---
 
 ## [Hermes download success](hermes-download-success)
+
+---
+
+## Hermes setting
+
+[choice Function](choice-function)
