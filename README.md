@@ -70,4 +70,34 @@ setting venv:
 
 [choice Function](choice-function)
 
-[test](test)
+[test-1](test-1)
+
+## Problem
+If I input something it will disappear.
+
+## Solution
+#1 press Ctrl + C or Ctrl + L
+     result : isn't work.
+#2 open new PowerShell, and input " hermes " .
+     it's work.
+[Solution #2](sol-2)
+
+--
+
+[test-2](test-2)
+
+## Problem
+I input " hellow ", and it's error.
+I don't have OpenRouter API key
+
+## Solution
+#1 [using ollama with gemma4 :e4b.](gemma4:e4b.)
+     After test, I discover it is too slow.
+          I think is my VRAM only 8 GB.
+          
+#2 I decide use ollama cloud models.
+
+   Because use cloud models, I choose [mistral-large-3:675b](mistral-large-3:675b).
+       The reason is nowadays [mistral-large-3:675b](mistral-large-3:675b) one of the largest models.
+
+## [test]()
