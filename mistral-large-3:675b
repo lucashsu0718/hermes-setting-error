@@ -1,0 +1,122 @@
+PS C:\Users\xulux> hermes setup
+
+┌─────────────────────────────────────────────────────────┐
+│             ⚕ Hermes Agent Setup Wizard                │
+├─────────────────────────────────────────────────────────┤
+│  Let's configure your Hermes Agent installation.       │
+│  Press Ctrl+C at any time to exit.                     │
+└─────────────────────────────────────────────────────────┘
+
+
+◆ Reconfigure
+✓ You already have Hermes configured.
+  Running the full wizard — each prompt shows your current value.
+  Press Enter to keep it, or type a new value to change it.
+
+  Tip: jump straight to a section with 'hermes setup model|terminal|
+       gateway|tools|agent', or fill only missing items with --quick.
+
+◆ Configuration Location
+  Config file:  C:\Users\xulux\AppData\Local\hermes\config.yaml
+  Secrets file: C:\Users\xulux\AppData\Local\hermes\.env
+  Data folder:  C:\Users\xulux\AppData\Local\hermes
+  Install dir:  C:\Users\xulux\AppData\Local\hermes\hermes-agent
+
+  You can edit these files directly or use 'hermes config edit'
+
+◆ Inference Provider
+  Choose how to connect to your main chat model.
+     Guide: https://hermes-agent.nousresearch.com/docs/integrations/providers
+
+
+  Current model:    anthropic/claude-opus-4.6
+  Active provider:  OpenRouter
+
+
+  Select provider:
+  Select by number, Enter to confirm.
+
+  (○)  1. Nous Portal (Nous Research subscription)
+  (●)  2. OpenRouter (100+ models, pay-per-use)  ← currently active
+  (○)  3. Vercel AI Gateway (200+ models, $5 free credit, no markup)
+  (○)  4. Anthropic (Claude models — API key or Claude Code)
+  (○)  5. OpenAI Codex
+  (○)  6. Xiaomi MiMo (MiMo-V2.5 and V2 models — pro, omni, flash)
+  (○)  7. NVIDIA NIM (Nemotron models — build.nvidia.com or local NIM)
+  (○)  8. Qwen OAuth (reuses local Qwen CLI login)
+  (○)  9. GitHub Copilot (uses GITHUB_TOKEN or gh auth token)
+  (○) 10. GitHub Copilot ACP (spawns `copilot --acp --stdio`)
+  (○) 11. Hugging Face Inference Providers (20+ open models)
+  (○) 12. Google AI Studio (Gemini models — native Gemini API)
+  (○) 13. Google Gemini via OAuth + Code Assist (free tier supported; no API key needed)
+  (○) 14. DeepSeek (DeepSeek-V3, R1, coder — direct API)
+  (○) 15. xAI (Grok models — direct API)
+  (○) 16. Z.AI / GLM (Zhipu AI direct API)
+  (○) 17. Kimi Coding Plan (api.kimi.com) & Moonshot API
+  (○) 18. Kimi / Moonshot China (Moonshot CN direct API)
+  (○) 19. StepFun Step Plan (agent/coding models via Step Plan API)
+  (○) 20. MiniMax (global direct API)
+  (○) 21. MiniMax China (domestic direct API)
+  (○) 22. Alibaba Cloud / DashScope Coding (Qwen + multi-provider)
+  (○) 23. Ollama Cloud (cloud-hosted open models — ollama.com)
+  (○) 24. Arcee AI (Trinity models — direct API)
+  (○) 25. Kilo Code (Kilo Gateway API)
+  (○) 26. OpenCode Zen (35+ curated models, pay-as-you-go)
+  (○) 27. OpenCode Go (open models, $10/month subscription)
+  (○) 28. AWS Bedrock (Claude, Nova, Llama, DeepSeek — IAM or API key)
+  (○) 29. Azure Foundry (OpenAI-style or Anthropic-style endpoint — your Azure AI deployment)
+  (○) 30. Custom endpoint (enter URL manually)
+  (○) 31. Configure auxiliary models...
+  (○) 32. Leave unchanged
+
+  Choice [default 2]: 23
+
+  Ollama Cloud API key: 027fef87... ✓
+
+Base URL [https://ollama.com/v1]: http://192.168.31.216:11434/v1
+  Found 39 model(s) from Ollama Cloud
+Select default model:
+   1. gemma4:e4b
+   2. gemma4:latest
+   3. gpt-oss:120b-cloud
+   4. devstral-small-2:24b
+   5. glm-5
+   6. ministral-3:3b
+   7. deepseek-v3.2
+   8. kimi-k2:1t
+   9. glm-4.7
+  10. deepseek-v4-pro
+  11. minimax-m2
+  12. nemotron-3-nano:30b
+  13. qwen3-vl:235b-instruct
+  14. deepseek-v3.1:671b
+  15. kimi-k2-thinking
+  16. gpt-oss:20b
+  17. cogito-2.1:671b
+  18. rnj-1:8b
+  19. ministral-3:14b
+  20. mistral-large-3:675b
+  21. glm-4.6
+  22. qwen3-coder:480b
+  23. nemotron-3-super
+  24. qwen3-next:80b
+  25. glm-5.1
+  26. gemini-3-flash-preview
+  27. kimi-k2.6:cloud
+  28. deepseek-v4-flash
+  29. kimi-k2.5
+  30. minimax-m2.5
+  31. ministral-3:8b
+  32. gpt-oss:120b
+  33. qwen3-vl:235b
+  34. qwen3-coder-next
+  35. minimax-m2.1
+  36. qwen3.5:397b
+  37. minimax-m2.7
+  38. gemma4:31b
+  39. devstral-2:123b
+  40. Enter custom model name
+  41. Skip (keep current)
+
+Choice [1-41] (default: skip): 20
+Default model set to: mistral-large-3:675b (via Ollama Cloud)
