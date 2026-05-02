@@ -97,7 +97,7 @@ I don't have OpenRouter API key
           
 #2 I decide use ollama cloud models.
 
-   Because use cloud models, I choose [mistral-large-3:675b](mistral-large-3:675b).
-       The reason is nowadays [mistral-large-3:675b](mistral-large-3:675b) one of the largest models.
+   Because use cloud models, I choose [gpt-oss:120b](gpt-oss:120b).
+       The reason is that [gpt-oss:120b](gpt-oss:120b) is not too slow and smart.
 
 ## [test]()
