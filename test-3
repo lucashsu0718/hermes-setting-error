@@ -1,0 +1,84 @@
+PS C:\Users\xulux> hermes
+
+██╗  ██╗███████╗██████╗ ███╗   ███╗███████╗███████╗       █████╗  ██████╗ ███████╗███╗   ██╗████████╗
+██║  ██║██╔════╝██╔══██╗████╗ ████║██╔════╝██╔════╝      ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝
+███████║█████╗  ██████╔╝██╔████╔██║█████╗  ███████╗█████╗███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║
+██╔══██║██╔══╝  ██╔══██╗██║╚██╔╝██║██╔══╝  ╚════██║╚════╝██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║
+██║  ██║███████╗██║  ██║██║ ╚═╝ ██║███████╗███████║      ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝      ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝
+
+╭──────────────────────────────── Hermes Agent v0.11.0 (2026.4.23) · upstream f98b5d00 ────────────────────────────────╮
+│                                   Available Tools                                                                    │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⣀⣀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   browser: browser_back, browser_click, ...                                          │
+│  ⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣇⠸⣿⣿⠇⣸⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀   browser-cdp: browser_cdp, browser_dialog                                           │
+│  ⠀⢀⣠⣴⣶⠿⠋⣩⡿⣿⡿⠻⣿⡇⢠⡄⢸⣿⠟⢿⣿⢿⣍⠙⠿⣶⣦⣄⡀⠀   clarify: clarify                                                                   │
+│  ⠀⠀⠉⠉⠁⠶⠟⠋⠀⠉⠀⢀⣈⣁⡈⢁⣈⣁⡀⠀⠉⠀⠙⠻⠶⠈⠉⠉⠀⠀   code_execution: execute_code                                                       │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⡿⠛⢁⡈⠛⢿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   cronjob: cronjob                                                                   │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⣿⣦⣤⣈⠁⢠⣴⣿⠿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   delegation: delegate_task                                                          │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠻⢿⣿⣦⡉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   feishu_doc: feishu_doc_read                                                        │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢷⣦⣈⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   feishu_drive: feishu_drive_add_comment, ...                                        │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⠦⠈⠙⠿⣦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   (and 14 more toolsets...)                                                          │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣤⡈⠁⢤⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                                                                                      │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠷⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   Available Skills                                                                   │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠑⢶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   autonomous-ai-agents: claude-code, codex, hermes-agent, opencode                   │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠁⢰⡆⠈⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   creative: architecture-diagram, ascii-art, ascii-video, b...                       │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠈⣡⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   data-science: jupyter-live-kernel                                                  │
+│  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀   devops: webhook-subscriptions                                                      │
+│                                   email: himalaya                                                                    │
+│   gpt-oss:120b · Nous Research    gaming: minecraft-modpack-server, pokemon-player                                   │
+│          C:\Users\xulux           general: dogfood                                                                   │
+│  Session: 20260502_150555_e49c71  github: codebase-inspection, github-auth, github-code-r...                         │
+│                                   mcp: native-mcp                                                                    │
+│                                   media: gif-search, heartmula, songsee, spotify, youtub...                          │
+│                                   mlops: audiocraft-audio-generation, axolotl, dspy, eva...                          │
+│                                   note-taking: obsidian                                                              │
+│                                   productivity: google-workspace, linear, maps, nano-pdf, notio...                   │
+│                                   red-teaming: godmode                                                               │
+│                                   research: arxiv, blogwatcher, llm-wiki, polymarket                                 │
+│                                   smart-home: openhue                                                                │
+│                                   software-development: plan, requesting-code-review, subagent-driven-d...           │
+│                                                                                                                      │
+│                                   29 tools · 68 skills · /help for commands                                          │
+│                                   ⚠ 944 commits behind — run hermes update to update                                 │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Welcome to Hermes Agent! Type your message or /help for commands.
+✦ Tip: Dangerous command approval has 4 tiers: once, session, always (permanent allowlist), deny.
+
+  ⚠ tirith security scanner enabled but not available — command scanning will use pattern matching only
+────────────────────────────────────────
+
+● hi
+Initializing agent...
+────────────────────────────────────────
+
+⚠️  API call failed (attempt 1/3): NotFoundError [HTTP 404]
+   🔌 Provider: ollama-cloud  Model: gpt-oss:120b
+   🌐 Endpoint: https://ollama.com/api
+   📝 Error: HTTP 404: Error code: 404 - {'error': 'path "/api/chat/completions" not found'}
+   📋 Details: path "/api/chat/completions" not found
+⏳ Retrying in 2.5s (attempt 1/3)...
+⚠️  API call failed (attempt 2/3): NotFoundError [HTTP 404]
+   🔌 Provider: ollama-cloud  Model: gpt-oss:120b
+   🌐 Endpoint: https://ollama.com/api
+   📝 Error: HTTP 404: Error code: 404 - {'error': 'path "/api/chat/completions" not found'}
+   📋 Details: path "/api/chat/completions" not found
+⏳ Retrying in 5.2s (attempt 2/3)...
+⚠️  API call failed (attempt 3/3): NotFoundError [HTTP 404]
+   🔌 Provider: ollama-cloud  Model: gpt-oss:120b
+   🌐 Endpoint: https://ollama.com/api
+   📝 Error: HTTP 404: Error code: 404 - {'error': 'path "/api/chat/completions" not found'}
+   📋 Details: path "/api/chat/completions" not found
+⚠️ Max retries (3) exhausted — trying fallback...
+❌ API failed after 3 retries — HTTP 404: Error code: 404 - {'error': 'path "/api/chat/completions" not found'}
+   💀 Final error: HTTP 404: Error code: 404 - {'error': 'path "/api/chat/completions" not found'}
+ ─  ⚕ Hermes  ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+     API call failed after 3 retries: HTTP 404: Error code: 404 - {'error': 'path "/api/chat/completions" not
+     found'}
+
+ ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ ⚕ gpt-oss:120b │ 0/131.1K │ [░░░░░░░░░░] 0% │ 3m │ ⏲ 10s
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
