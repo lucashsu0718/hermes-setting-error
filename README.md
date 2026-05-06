@@ -95,9 +95,9 @@ I don't have OpenRouter API key
      After test, I discover it is too slow.
           I think is my VRAM only 8 GB.
           
-#2 I decide use ollama cloud models.
+#2 I decide use Xiaomi MiMo.
 
-   Because use cloud models, I choose [gpt-oss:120b](gpt-oss:120b).
-       The reason is that [gpt-oss:120b](gpt-oss:120b) is not too slow and smart.
+   I choose [Xiaomi MiMo](MiMo-V2.5).
+       The reason is that [Xiaomi MiMo](MiMo-V2.5) is not too slow and smart.
 
 ## [test](test-3)
