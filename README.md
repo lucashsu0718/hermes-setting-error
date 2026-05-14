@@ -101,3 +101,29 @@ I don't have OpenRouter API key
        The reason is that [Xiaomi MiMo](MiMo-V2.5) is not too slow and smart.
 
 ## [test](test-3)
+
+## Problem 
+I input " hi ", and it's error. 
+
+---
+
+## About a week ago, Ollama got an update and started supporting direct integration. So I decided to use its built-in commands instead.
+
+# First : Download ollama in wsl.
+   Problem : Lack Unzip tools.
+   Solution : install zstd in wsl
+   
+       sudo apt update
+       sudo apt install zstd -y
+
+   And reinstall
+
+       curl -fsSL https://ollama.com/install.sh | sh
+
+# Second : Link Hermes with discord
+   creat a discord bot and setting
+   ![discord-bot](discord-bot.png)
+
+# [Test](test-4)
+
+   Success !!
