@@ -1,0 +1,20 @@
+PS C:\Windows\System32> taskkill /F /IM hermes.exe
+ERROR: The process "hermes.exe" not found.
+PS C:\Windows\System32> taskkill /F /IM ollama.exe
+SUCCESS: The process "ollama.exe" with PID 130396 has been terminated.
+PS C:\Windows\System32> npm uninstall -g hermes
+
+up to date in 662ms
+PS C:\Windows\System32> pip uninstall hermes -y
+WARNING: Skipping hermes as it is not installed.
+PS C:\Windows\System32> npm list -g --depth=0
+C:\Users\xulux\AppData\Roaming\npm
++-- openclaw@2026.2.17
+`-- pnpm@11.0.9
+
+PS C:\Windows\System32> Remove-Item -Recurse -Force $env:USERPROFILE\.hermes -ErrorAction SilentlyContinue
+PS C:\Windows\System32> Remove-Item -Recurse -Force $env:APPDATA\hermes -ErrorAction SilentlyContinue
+PS C:\Windows\System32> Remove-Item -Recurse -Force $env:LOCALAPPDATA\hermes -ErrorAction SilentlyContinue
+PS C:\Windows\System32> Remove-Item -Recurse -Force $env:USERPROFILE\.ollama -ErrorAction SilentlyContinue
+PS C:\Windows\System32> ollama list
+NAME    ID    SIZE    MODIFIED
